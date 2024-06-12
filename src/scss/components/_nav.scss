@@ -1,0 +1,137 @@
+@use '../utils/functions/' as *;
+@use '../utils/mixins/' as *;
+
+.nav {
+  position: relative;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    .logo {
+      display: block;
+
+      @include media(tablet-wide) {
+        display: none;
+      }
+    }
+
+    .header & {
+
+      @include media(tablet-wide) {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding-top: calc(var(--header-height) * 1.5);
+        width: 100%;
+        height: calc(var(--vh));
+        background-color: var(--color-white);
+        transform: translateX(150%);
+        transition-property: transform;
+        transition-duration: 0.4s;
+      }
+    }
+
+    .nav__btns {
+
+      .btn--user {
+        @include media(tablet-wide) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .header & {
+
+      @include media(desktop) {
+        margin-right: 10px;
+      }
+
+      @include media(tablet-wide) {
+        z-index: -1;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__item {
+
+    .header & {
+
+      @include media(tablet-wide) {
+      }
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: var(--fw-600);
+    padding: 4px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: var(--color-black-800);
+    background-color: transparent;
+    transition: color 0.4s;
+    font-variation-settings: unset;
+    line-height: 1.5;
+
+    &:hover,
+    &:focus {
+      color: var(--color-blue-400);
+    }
+
+    &.true {
+      color: var(--color-blue-400);
+      font-weight: var(--fw-700);
+
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+
+    .btn--user {
+      white-space: nowrap;
+      max-width: 152px;
+      background-color: var(--color-blue-50)
+    }
+
+    .request-btn {
+      white-space: nowrap;
+      max-width: 204px;
+    }
+
+    @include media(tablet-wide) {
+      flex-direction: column;
+    }
+
+  }
+
+  @include media(tablet-wide) {
+
+    .nav {
+
+      &__list {
+        margin: 0 auto;
+      }
+
+      &__item {
+        margin-right: 0;
+      }
+    }
+
+  }
+}

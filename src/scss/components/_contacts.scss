@@ -1,0 +1,151 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.contact {
+  position: relative;
+
+  &__inner {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 653px;
+    background-position: top right;
+    min-height: 818px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .title {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: var(--color-blue-400);
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 370px;
+    width: 100%;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-of-type) {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0;
+    gap: 12px;
+  }
+
+  label {
+    font-weight: var(--fw-700);
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    width: 100%;
+    color: var(--color-blue-400);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  input, textarea {
+    font-weight: var(--fw-500);
+    max-width: 370px;
+    border: 1px solid var(--color-white-50);
+    padding: 12px 24px;
+    width: 100%;
+    color: var(--color-gray-400);
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 1.4;
+
+    &::placeholder {
+      color: var(--color-gray-400);
+    }
+  }
+
+  textarea {
+    padding: 13px 19px;
+    min-height: 170px;
+    resize: none;
+  }
+
+  .btn {
+    max-width: 90px;
+    padding: 12px 22px;
+    font-size: 18px;
+    font-weight: var(--fw-500);
+  }
+
+  @include media(tablet-wide) {
+
+    &__wrapper {
+      max-width: 300px;
+    }
+  }
+
+  @include media(tablet) {
+
+    .container {
+      padding: 0;
+    }
+
+    &__wrapper {
+      max-width: 400px;
+      background-color: rgba(179, 179, 179, 0.9);
+      padding: 0 15px;
+      border-radius: var(--radius-main);
+    }
+  }
+
+  @include media(mobile-l) {
+
+    &__inner {
+      min-height: 718px;
+    }
+  }
+
+  @include media(mobile-m) {
+
+    &__name {
+      flex-direction: column;
+    }
+
+    &__group {
+      width: 100%;
+    }
+
+    &__form {
+
+      .btn {
+        max-width: unset;
+        width: 100%;
+      }
+      
+    }
+  }
+
+}

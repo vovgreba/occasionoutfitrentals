@@ -1,0 +1,81 @@
+/* stylelint-disable declaration-no-important */
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
+
+*[class].btn {
+  font-family: var(--font-family-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-main);
+  padding: 18px 50px;
+  width: 100%;
+  font-weight: var(--fw-600);
+  font-size: 16px;
+  color: var(--color-white);
+  background-color: var(--color-blue-400);
+  white-space: nowrap;
+  line-height: 1.5;
+  text-align: center;
+  color: inherit;
+  transition-property: background-color, color;
+  transition-duration: 0.4s;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-blue-50);
+    color: var(--color-blue-400);
+  }
+
+  &--reverse {
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-blue-800) !important;
+      color: var(--color-blue-400);
+    }
+  }
+
+  &--user {
+    position: relative;
+
+    &:hover::before,
+    &:focus::before {
+      filter: invert(1);
+    }
+  }
+
+  @include media(mobile-s) {
+    margin: 0 auto;
+    min-width: auto;
+  }
+}
+
+*[class].request-btn {
+  position: relative;
+
+  &:hover::after,
+  &:focus::after {
+    filter: invert(0);
+  }
+}
+
+.arrow-left {
+  position: relative;
+  transition: all .4s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 53px;
+    transform: translateY(-50%);
+    background-image: url('../images/icons/arrow-left.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+  }
+}

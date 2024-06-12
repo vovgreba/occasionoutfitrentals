@@ -1,0 +1,118 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+.rental {
+  padding: 86px 0;
+
+  h2 {
+    margin-bottom: 69px;
+  }
+
+  a {
+    display: inline-block;
+    padding-right: 28px;
+    margin-bottom: 27px;
+    color: var(--color-blue-400);
+
+    &::after {
+      right: 0;
+      background-image: url('../images/icons/arrow-right-blue.svg');
+    }
+  }
+
+  &__tips {
+    font-weight: var(--fw-700);
+    margin-bottom: 24px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    max-width: 100%;
+
+    p {
+      font-weight: var(--fw-600);
+      line-height: 1.5;
+      font-size: 22px;
+    }
+  }
+
+  h3 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: var(--color-black-800);
+
+    span {
+      color: var(--color-blue-400);
+      text-transform: capitalize;
+    }
+
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+
+  ul {
+    margin-bottom: 36px;
+    padding-left: 30px;
+  }
+
+  li {
+    font-weight: var(--fw-400);
+    list-style: disc;
+    font-size: 18px;
+    line-height: 1.1;
+    color: var(--color-black-800);
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__step {
+
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    &:first-child {
+      h3 + p {
+        margin-bottom: 24px;
+      }
+    }
+
+    &:last-child {
+
+      ul {
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include media(tablet) {
+
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    &__items {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+
+  @include media(mobile-l) {
+    padding: 60px 0;
+  }
+}

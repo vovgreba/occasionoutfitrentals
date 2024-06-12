@@ -1,0 +1,100 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.policy {
+  padding: calc(var(--header-height) + 108px) 0 108px;
+
+  &__content {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    font-size: 38px;
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-weight: var(--fw-700);
+    margin: 0 0 24px;
+    font-size: 28px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .description {
+    margin-bottom: 20px;
+    color: var(--color-blue-400);
+  }
+
+  p {
+    color: var(--color-black-800);
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  a {
+    color: var( --color-blue-400);
+    text-decoration: underline;
+    font-weight: var(--fw-700);
+  }
+
+  ul {
+    padding-top: 24px;
+    margin: 0 0 24px;
+  }
+
+  li {
+    color: var(--color-black-800);
+    font-size: 20px;
+    position: relative;
+    padding-left: 24px;
+    font-weight: var(--fw-400);
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-weight: var(--fw-600);
+      color: var(--color-black-800);
+    }
+
+    span {
+      font-weight: 800;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  @include media(tablet) {
+    padding: calc(var(--header-height) + 40px) 0 40px;
+  }
+
+  @include media(mobile-l) {
+
+    h1 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+  }
+
+  @include media(mobile-m) {
+
+    h1 {
+      font-size: 32px;
+    }
+
+  }
+}

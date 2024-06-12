@@ -1,0 +1,50 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --content-width: 1330px;
+  --content-width--small: 1200px;
+
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-width--small: calc(var(--content-width--small) + (var(--container-offset) * 2));
+
+  // font-family
+  --font-family-primary: "Manrope", sans-serif;
+  --font-family-secondary: "Plus Jakarta Sans", sans-serif;
+
+  // font-weight
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  // color
+  --color-white: #fff;
+  --color-white-50: #EBEAED;
+  --color-white-100: rgba(255, 255, 255, 0.1);
+  --color-white-200: rgba(255, 255, 255, 0.2);
+  --color-white-500: rgba(255, 255, 255, 0.051);
+
+  --color-gray-300: #BDBDBD;
+  --color-gray-400: #828282;
+
+  --color-black: #000;
+  --color-black-700: #2d2d2d;
+  --color-black-750: #111827;
+  --color-black-800: #161616;
+  --color-black-850: rgba(22, 22, 22, 0.8);
+
+  --color-blue-50: #e8eeff;
+  --color-blue-200: #87A9FA;
+  --color-blue-300: #5488ff;
+
+  --color-blue-400: #235ee7;
+  --color-blue-800: #010e35;
+
+  //  radius
+  --radius-main: 4px;
+}

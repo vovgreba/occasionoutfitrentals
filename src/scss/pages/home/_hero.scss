@@ -1,0 +1,227 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+.hero {
+  min-height:calc(var(--header-height) + 800px);
+  position: relative;
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(var(--header-height) + 800px);
+    padding-top: var(--header-height);
+    max-width: 1440px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 653px;
+    background-position: 100% 100%;
+
+    &--rental {
+      justify-content: flex-start;
+      padding-top: calc(var(--header-height) + 116px);
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    max-width: 569px;
+    margin-bottom: 48px;
+  }
+
+  .description {
+    font-size: 28px;
+  }
+
+  &__content {
+    &--home {
+      align-self: flex-end;
+    }
+
+  }
+
+  &__info {
+    padding-left: 120px;
+    padding-right: 15px;
+    margin-bottom: 87px;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__image {
+    img {
+      max-width: 653px;
+      max-height: 800px;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 648px;
+    padding: 20px;
+    border-radius: var(--radius-main);
+
+    &--home {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+  .btn {
+    max-width: 232px;
+    margin: 0;
+    justify-content: flex-start;
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      color: var(--color-blue-400);
+    }
+  }
+
+
+  @include media(desktop) {
+    min-height: 750px;
+
+    &--home {
+      min-height: 800px;
+    }
+
+    &__inner {
+      min-height: 750px;
+
+      &--home {
+        min-height: 800px;
+      }
+    }
+
+  }
+
+  @include media(tablet-wide) {
+    &__inner {
+
+      &--home {
+        background-image: url('../images/home/hero.jpg');
+        justify-content: flex-end;
+      }
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__wrapper {
+      display: flex;
+    }
+
+    &__info {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media(tablet) {
+    min-height: 700px;
+
+    &--home {
+      min-height: 800px;
+    }
+
+    &__inner {
+      min-height: 700px;
+      position: relative;
+
+      &--home {
+        min-height: 800px;
+      }
+    }
+
+  }
+
+  @include media(mobile-l) {
+    min-height: 600px;
+
+    &--home {
+      min-height: 800px;
+    }
+
+    &__content {
+      max-width: unset;
+
+      h1 {
+        max-width: unset;
+      }
+
+      p {
+        max-width: unset;
+      }
+
+    }
+
+    &__inner {
+      min-height: 600px;
+      background-position: center center;
+      background-size: cover;
+
+      &--home {
+        min-height: 800px;
+      }
+
+      &--rental {
+        justify-content: center;
+        padding-top: calc(var(--header-height));
+      }
+    }
+
+  }
+
+  @include media(mobile-m) {
+    min-height: 500px;
+
+    &--home {
+      min-height: 700px;
+    }
+
+    .description {
+      font-size: 24px;
+    }
+
+    &__inner {
+      min-height: 500px;
+
+      &--home {
+        min-height: 700px;
+      }
+    }
+
+  }
+
+  @include media(mobile-s) {
+    &__content {
+
+      .btn {
+        max-width: none;
+        width: 100%;
+
+        &::after {
+          right: 20px;
+        }
+      }
+    }
+
+  }
+}
