@@ -2,7 +2,7 @@
 
 > Built with Parcel bundler.
 ## You can watch this project on GitHub Pages.
-[Link to the main page](https://vovgreba.github.io/Occasionoutfitrentals/dist/index)
+[Link to the main page](https://vovgreba.github.io/occasionoutfitrentals/dist/index)
 
 
 This project was created using Parcel. For introduction and setup additional
